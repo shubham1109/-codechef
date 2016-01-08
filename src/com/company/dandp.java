@@ -65,6 +65,8 @@ public class dandp {
 
             }
             minDist(array, m, n);
+
+
             test--;
         }
     }
@@ -119,23 +121,68 @@ public class dandp {
     }
 
 
-    public static void count(node Char) {
+    public static int count(node Char) {
                    int c=0;
 
 
 
-                if (Char.link.left == 2 && Char.link.right == 2 && Char.link.up == 2 && Char.link.down == 2) {
-                      c++;
+                if (Char.left == 2 && Char.right == 2 && Char.up == 2 && Char.down == 2) {
+                    c= c+4;
                 }
-
-
-
-
-
-
+        if(Char.left ==2&&Char.right ==2&&Char.up==2&&Char.down!=2){
+            c= c+3;
+        }
+        if(Char.left ==2 &&Char.right==2&&Char.down==2&&Char.up!=2)
+        {
+            c=c+3;
+        }if(Char.left !=2 &&Char.right==2&&Char.down==2&&Char.up==2)
+        {
+            c=c+3;
+        }if(Char.left ==2 &&Char.right!=2&&Char.down==2&&Char.up==2)
+        {
+            c=c+3;
+        }
+        if(Char.left !=2 &&Char.right==2&&Char.down==2&&Char.up!=2)
+        {
+            c=c+2;
+        }if(Char.left ==2 &&Char.right!=2&&Char.down==2&&Char.up!=2)
+        {
+            c=c+2;
+        }if(Char.left ==2 &&Char.right!=2&&Char.down!=2&&Char.up==2)
+        {
+            c=c+2;
+        }if(Char.left !=2 &&Char.right==2&&Char.down!=2&&Char.up!=2)
+        {
+            c=c+2;
+        }
+        if(Char.left ==2 &&Char.right!=2&&Char.down!=2&&Char.up!=2)
+        {
+            c=c+1;
+        }if(Char.left !=2 &&Char.right==2&&Char.down!=2&&Char.up!=2)
+        {
+            c=c+1;
+        }if(Char.left !=2 &&Char.right!=2&&Char.down==2&&Char.up!=2)
+        {
+            c=c+1;
+        }if(Char.left !=2 &&Char.right!=2&&Char.down!=2&&Char.up==2)
+        {
+            c=c+1;
+        }
+        else{
+            c=0;
+        }
+        return c;
     }
+    public void count_node(int array[][],int m,int n) {
+        node Char = new node();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                count(Char);
 
 
+            }
+        }
+    }
 }
 
 

@@ -6,8 +6,9 @@ public class CoolingPies {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
         int test = input.nextInt();
-        int i, count=0,j;
+        int i,j;
         while (test <= 30 && test != 0) {
+            int count =0;
             int Cookies = input.nextInt();
             //Number of Cookies is less than 30
             if (Cookies <= 30) {
@@ -20,7 +21,7 @@ public class CoolingPies {
                     }
 
                 }
-                Arrays.parallelSort(a);
+                Arrays.sort(a);
 
                 int tray[] = new int[Cookies];
                 //input capacity of tray not exceeding 100
@@ -30,7 +31,7 @@ public class CoolingPies {
                         System.exit(1);
                     }
                 }
-                Arrays.parallelSort(tray);
+                Arrays.sort(tray);
                 for (i = 0, j = 0; i < Cookies && j < Cookies; ) {
                     if (a[i] <= tray[j]) {
                         count++;
